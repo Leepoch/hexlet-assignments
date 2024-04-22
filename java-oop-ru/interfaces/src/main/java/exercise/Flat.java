@@ -2,9 +2,9 @@ package exercise;
 
 // BEGIN
 public class Flat implements Home {
-    private double area;
-    private double balconyArea;
-    private int floor;
+    private final double area;
+    private final double balconyArea;
+    private final int floor;
 
     Flat(double area, double balconyArea, int floor) {
         this.area = area;
@@ -17,26 +17,14 @@ public class Flat implements Home {
         return "Квартира площадью " + totalArea + " метров на " + floor + " этаже";
     }
 
-    public int compareTo(Flat flat) {
-        if (area > flat.getArea()) {
-            return 1;
-        } else if (area < flat.getArea()) {
-            return -1;
-        } else {
-            return 0;
-        }
+    @Override
+    public int compareTo(Home flat) {
+        return Double.compare(area, flat.getArea());
     }
 
     public double getArea() {
-        return area;
+        return area + balconyArea;
     }
 
-    public double getBalconyArea() {
-        return balconyArea;
-    }
-
-    public int getFloor() {
-        return floor;
-    }
 }
 // END
