@@ -9,7 +9,8 @@ public class App {
         if (apartments.isEmpty()) {
             return new ArrayList<>();
         }
-//        Arrays.sort(sortedApartments, Comparator.comparing((apartment1, apartment2) -> apartment1.compareTo(apartment2)));
+//      Arrays.sort(sortedApartments, Comparator.comparing(
+//      (apartment1, apartment2) -> apartment1.compareTo(apartment2)));
         var result = new ArrayList<String>();
         var sortedApartments = new ArrayList<>(apartments);
         sortedApartments.sort(Home::compareTo);
