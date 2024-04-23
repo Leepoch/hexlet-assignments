@@ -13,13 +13,12 @@ public class Flat implements Home {
     }
 
     public String toString() {
-        var totalArea = area + balconyArea;
-        return "Квартира площадью " + totalArea + " метров на " + floor + " этаже";
+        return "Квартира площадью " + this.getArea() + " метров на " + floor + " этаже";
     }
 
     @Override
     public int compareTo(Home flat) {
-        return Double.compare(area, flat.getArea());
+        return Double.compare(this.getArea(), flat.getArea());
     }
 
     public double getArea() {
