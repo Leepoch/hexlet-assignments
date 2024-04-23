@@ -1,8 +1,9 @@
 package exercise;
 
-import java.sql.Array;
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 
 // BEGIN
 public class App {
@@ -10,7 +11,7 @@ public class App {
 
         var result = new ArrayList<String>();
         var sortedApartments = new ArrayList<>(apartments);
-        Arrays.sort(sortedApartments, Comparator.comparing((apartment1, apartment2) -> apartment1.compareTo(apartment2)));
+        sortedApartments.sort(Home::compareTo);
         for (var i = 0; i < countApartments; i++) {
             result.add(sortedApartments.get(i).toString());
         }
