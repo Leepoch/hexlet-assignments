@@ -8,7 +8,7 @@ public class InMemoryKV implements KeyValueStorage{
     private Map<String, String> data = new HashMap<>();
 
     InMemoryKV(Map<String, String> coll) {
-        this.data.putAll(coll);
+        data.putAll(coll);
     }
 
     public void set(String key, String value) {
