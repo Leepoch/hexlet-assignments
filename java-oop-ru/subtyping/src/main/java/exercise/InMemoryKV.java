@@ -24,7 +24,7 @@ public class InMemoryKV implements KeyValueStorage{
     }
 
     public Map<String, String> toMap() {
-        return data;
+        return new HashMap<>(data);
     }
 }
 // END
