@@ -17,7 +17,7 @@ public class SingleTag extends Tag {
                 .append(super.getName());
         super.getAtrs().forEach((key, value) -> text.append(" ")
                 .append(key)
-                .append("\"")
+                .append("=\"")
                 .append(value)
                 .append("\""));
         return text.append(">").toString();
