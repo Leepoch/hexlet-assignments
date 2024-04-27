@@ -63,7 +63,7 @@ class AppTest {
 
         Tag div = new PairedTag("div", attributes, "", children);
         String actual = div.toString();
-        String expected = "<div lang=\"ru\" id=\"abc\"><br id=\"s\"><hr class=\"a-5\"></div>";
+        String expected = "<div id=\"abc\" lang=\"ru\"><br id=\"s\"><hr class=\"a-5\"></div>";
         assertThat(actual).isEqualTo(expected);
     }
 }
