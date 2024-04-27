@@ -1,6 +1,7 @@
 package exercise;
 
 import java.util.Map;
+import java.util.TreeMap;
 
 // BEGIN
 public class SingleTag extends Tag {
@@ -15,7 +16,8 @@ public class SingleTag extends Tag {
         var text = new StringBuilder();
         text.append("<")
                 .append(super.getName());
-        super.getAtrs().forEach((key, value) -> text.append(" ")
+        var sortedMap = new TreeMap<>(super.getAtrs());
+        sortedMap.forEach((key, value) -> text.append(" ")
                 .append(key)
                 .append("=\"")
                 .append(value)

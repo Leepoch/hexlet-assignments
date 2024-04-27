@@ -3,6 +3,7 @@ package exercise;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.List;
+import java.util.TreeMap;
 import java.util.stream.Collectors;
 
 // BEGIN
@@ -24,7 +25,8 @@ public class PairedTag extends Tag {
         var text = new StringBuilder();
         text.append("<")
                 .append(super.getName());
-        super.getAtrs().forEach((key, value) -> text.append(" ")
+        var sortedMap = new TreeMap<>(super.getAtrs());
+        sortedMap.forEach((key, value) -> text.append(" ")
                 .append(key)
                 .append("=\"")
                 .append(value)
