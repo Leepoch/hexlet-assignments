@@ -27,7 +27,7 @@ public final class App {
             ctx.render("users/index.jte", model("usersPage", usersPage));
         });
         app.get("/users/{id}", ctx -> {
-            var id = ctx.pathParamAsClass("id", Long.class).get( );
+            var id = ctx.pathParamAsClass("id", Long.class).get();
             var user = USERS.stream()
                     .filter(c -> c.getId() == id)
                     .findFirst()
