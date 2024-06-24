@@ -28,11 +28,9 @@ public final class App {
            var term = ctx.queryParam("term");
            var nameMatches = new ArrayList<User>();
            if (term != null) {
-               for (var user : USERS) {
-                   if (StringUtils.startsWithIgnoreCase(user.getFirstName(), term)) {
-                       nameMatches.add(user);
-                   }
-               }
+               nameMatches.addAll(USERS.stream()
+                       .filter(user -> StringUtils.startsWithIgnoreCase(user.getFirstName(), term))
+                       .toList());
            } else {
                nameMatches.addAll(USERS);
            }
