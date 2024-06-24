@@ -14,11 +14,11 @@
 <body>
 <div class="mx-auto p-4 py-md-5">
     <header>
-        <a href="index.jte">Main page</a>
-        <a href="users/index.jte">Users page</a>
+        <a href="/">Main page</a>
+        <a href="/users">Users page</a>
     </header>
     <main>
-
+        ${content}
     </main>
     <footer>Its footer</footer>
 </div>
