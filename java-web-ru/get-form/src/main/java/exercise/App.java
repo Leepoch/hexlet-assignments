@@ -27,15 +27,15 @@ public final class App {
         app.get("/users", ctx -> {
            var term = ctx.queryParam("term");
            var nameMatches = new ArrayList<User>();
-            if (term != null) {
-                for (var user : USERS) {
-                    if (StringUtils.startsWithIgnoreCase(user.getFirstName(), term)) {
-                        nameMatches.add(user);
-                    }
-                }
-            } else {
-                nameMatches.addAll(USERS);
-            }
+           if (term != null) {
+               for (var user : USERS) {
+                   if (StringUtils.startsWithIgnoreCase(user.getFirstName(), term)) {
+                       nameMatches.add(user);
+                   }
+               }
+           } else {
+               nameMatches.addAll(USERS);
+           }
            var page = new UsersPage(nameMatches, term);
            ctx.render("users/index.jte", model("page", page));
         });
