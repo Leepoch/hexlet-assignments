@@ -7,7 +7,6 @@ import io.javalin.rendering.template.JavalinJte;
 import exercise.model.User;
 import exercise.dto.users.UsersPage;
 import exercise.repository.UserRepository;
-import org.apache.commons.lang3.StringUtils;
 import exercise.util.Security;
 
 public final class App {
@@ -35,16 +34,16 @@ public final class App {
         });
 
         app.post("/users", ctx -> {
-           var firstName = ctx.formParam("firstName");
-           var lastName = ctx.formParam("lastName");
-           var email = ctx.formParam("email").trim().toLowerCase();
-           var password = ctx.formParam("password");
-           var capFirstName = firstName.substring(0, 1).toUpperCase() + firstName.substring(1);
-           var capLastName = lastName.substring(0, 1).toUpperCase() + lastName.substring(1);
+            var firstName = ctx.formParam("firstName");
+            var lastName = ctx.formParam("lastName");
+            var email = ctx.formParam("email").trim().toLowerCase();
+            var password = ctx.formParam("password");
+            var capFirstName = firstName.substring(0, 1).toUpperCase() + firstName.substring(1);
+            var capLastName = lastName.substring(0, 1).toUpperCase() + lastName.substring(1);
 
-           var user = new User(capFirstName, capLastName, email, Security.encrypt(password));
-           UserRepository.save(user);
-           ctx.redirect("/users");
+            var user = new User(capFirstName, capLastName, email, Security.encrypt(password));
+            UserRepository.save(user);
+            ctx.redirect("/users");
         });
         // END
 
